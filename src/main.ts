@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import * as dotenv from 'dotenv';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { HttpExceptionFilter } from './shares/filters/http-exception.filter';
 
 dotenv.config();
 
@@ -13,6 +14,8 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     cors: true,
   });
+
+  app.useGlobalFilters(new HttpExceptionFilter());
 
   const options = new DocumentBuilder()
     .addBearerAuth()
