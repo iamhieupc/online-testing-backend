@@ -21,7 +21,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     console.log(`exception.getResponse()`, exception.getResponse());
 
     response.status(status).json({
-      code: code || 'SOTADEX_00000',
+      code: code || 'TESTING_00000',
       statusCode: status || HttpStatus.INTERNAL_SERVER_ERROR,
       info: {
         message: message || 'Unknown errors',
