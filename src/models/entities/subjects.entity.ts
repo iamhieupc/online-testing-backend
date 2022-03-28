@@ -8,27 +8,19 @@ import {
 } from 'typeorm';
 
 @Entity({
-  name: 'users',
+  name: 'subjects',
 })
-export class UserEntity {
+export class SubjectEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   @Expose()
+  code: string;
+
+  @Column()
+  @Expose()
   name: string;
-
-  @Column()
-  @Expose()
-  email: string;
-
-  @Column()
-  @Expose()
-  password: string;
-
-  @Column()
-  @Expose()
-  is_admin: boolean;
 
   @Column()
   @Expose()

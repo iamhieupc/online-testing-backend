@@ -8,11 +8,15 @@ import {
 } from 'typeorm';
 
 @Entity({
-  name: 'users',
+  name: 'topics',
 })
-export class UserEntity {
+export class TopicEntity {
   @PrimaryGeneratedColumn()
   id: number;
+
+  @Column()
+  @Expose()
+  code: string;
 
   @Column()
   @Expose()
@@ -20,15 +24,7 @@ export class UserEntity {
 
   @Column()
   @Expose()
-  email: string;
-
-  @Column()
-  @Expose()
-  password: string;
-
-  @Column()
-  @Expose()
-  is_admin: boolean;
+  subject_id: number;
 
   @Column()
   @Expose()

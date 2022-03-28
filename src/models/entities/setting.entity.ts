@@ -8,11 +8,15 @@ import {
 } from 'typeorm';
 
 @Entity({
-  name: 'users',
+  name: 'mock-tests',
 })
-export class UserEntity {
+export class TestEntity {
   @PrimaryGeneratedColumn()
   id: number;
+
+  @Column()
+  @Expose()
+  topic_id: number;
 
   @Column()
   @Expose()
@@ -20,15 +24,7 @@ export class UserEntity {
 
   @Column()
   @Expose()
-  email: string;
-
-  @Column()
-  @Expose()
-  password: string;
-
-  @Column()
-  @Expose()
-  is_admin: boolean;
+  duration_in_minutes: number;
 
   @Column()
   @Expose()

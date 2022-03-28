@@ -8,27 +8,23 @@ import {
 } from 'typeorm';
 
 @Entity({
-  name: 'users',
+  name: 'mock-test-result-detail',
 })
-export class UserEntity {
+export class TestResultDetailsEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   @Expose()
-  name: string;
+  mock_test_result_id: number;
 
   @Column()
   @Expose()
-  email: string;
+  question_id: number;
 
   @Column()
   @Expose()
-  password: string;
-
-  @Column()
-  @Expose()
-  is_admin: boolean;
+  selected_answer_id: number;
 
   @Column()
   @Expose()

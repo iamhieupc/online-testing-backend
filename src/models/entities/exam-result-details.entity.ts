@@ -8,27 +8,23 @@ import {
 } from 'typeorm';
 
 @Entity({
-  name: 'users',
+  name: 'exam-result-detail',
 })
-export class UserEntity {
+export class ExamResultDetailsEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   @Expose()
-  name: string;
+  exam_result_id: number;
 
   @Column()
   @Expose()
-  email: string;
+  question_id: number;
 
   @Column()
   @Expose()
-  password: string;
-
-  @Column()
-  @Expose()
-  is_admin: boolean;
+  selected_answer_id: number;
 
   @Column()
   @Expose()

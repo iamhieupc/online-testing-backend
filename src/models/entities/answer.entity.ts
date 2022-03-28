@@ -8,27 +8,27 @@ import {
 } from 'typeorm';
 
 @Entity({
-  name: 'users',
+  name: 'answers',
 })
-export class UserEntity {
+export class AnswerEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   @Expose()
-  name: string;
+  question_id: number;
 
   @Column()
   @Expose()
-  email: string;
+  content: string;
 
   @Column()
   @Expose()
-  password: string;
+  is_correct: boolean;
 
   @Column()
   @Expose()
-  is_admin: boolean;
+  order: number;
 
   @Column()
   @Expose()

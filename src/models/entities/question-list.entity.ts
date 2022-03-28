@@ -8,9 +8,9 @@ import {
 } from 'typeorm';
 
 @Entity({
-  name: 'users',
+  name: 'question-lists',
 })
-export class UserEntity {
+export class QuestionListEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -20,15 +20,7 @@ export class UserEntity {
 
   @Column()
   @Expose()
-  email: string;
-
-  @Column()
-  @Expose()
-  password: string;
-
-  @Column()
-  @Expose()
-  is_admin: boolean;
+  topic_id: number;
 
   @Column()
   @Expose()
