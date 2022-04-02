@@ -1,26 +1,28 @@
 import { Expose } from 'class-transformer';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { ExamApplicationStatus, ExamApplicationType } from 'src/enums';
+import { Column, Entity, ManyToOne } from 'typeorm';
+import { Exam, User } from '.';
+import BaseEntity from './base.entity';
 
 @Entity({
-  name: 'exam-applications',
+  name: 'exam_applications',
 })
-export class ExamApplicationEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+export class ExamApplication extends BaseEntity {
+  @ManyToOne(() => Exam)
+  exam: Exam;
 
-  @Column()
-  @Expose()
-  exam_id: number;
+  @ManyToOne(() => User)
+  user: User;
 
-  @Column()
+  @Column({
+    enum: ExamApplicationType,
+  })
   @Expose()
-  user_id: number;
+  type: ExamApplicationType;
 
-  @Column()
+  @Column({
+    enum: ExamApplicationStatus,
+  })
   @Expose()
-  type: number;
-
-  @Column()
-  @Expose()
-  status: number;
+  status: ExamApplicationStatus;
 }

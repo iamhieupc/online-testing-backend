@@ -1,38 +1,16 @@
 import { Expose } from 'class-transformer';
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity } from 'typeorm';
+import BaseEntity from './base.entity';
 
 @Entity({
-  name: 'mock-tests',
+  name: 'settings',
 })
-export class TestEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column()
-  @Expose()
-  topic_id: number;
-
+export class Setting extends BaseEntity {
   @Column()
   @Expose()
   name: string;
 
   @Column()
   @Expose()
-  duration_in_minutes: number;
-
-  @Column()
-  @Expose()
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @Column()
-  @Expose()
-  @UpdateDateColumn()
-  updatedAt: Date;
+  value: string;
 }

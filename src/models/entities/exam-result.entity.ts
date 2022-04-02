@@ -1,38 +1,21 @@
 import { Expose } from 'class-transformer';
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
+import { ExamApplication } from '.';
+import BaseEntity from './base.entity';
 
 @Entity({
-  name: 'exam-details',
+  name: 'exam_results',
 })
-export class ExamDetailEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+export class ExamResult extends BaseEntity {
+  @OneToOne(() => ExamApplication)
+  @JoinColumn()
+  examApplication: ExamApplication;
 
   @Column()
   @Expose()
-  exam_application_id: number;
+  numCorrectAnswers: number;
 
   @Column()
   @Expose()
-  num_correct_answers: number;
-
-  @Column()
-  @Expose()
-  time_taken: number;
-
-  @Column()
-  @Expose()
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @Column()
-  @Expose()
-  @UpdateDateColumn()
-  updatedAt: Date;
+  timeTaken: number;
 }

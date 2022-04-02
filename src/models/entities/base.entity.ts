@@ -2,29 +2,13 @@ import { Expose } from 'class-transformer';
 import {
   Column,
   CreateDateColumn,
-  Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity({
-  name: 'question-list-details',
-})
-export class QuestionListDetailEntity {
+export default abstract class BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
-
-  @Column()
-  @Expose()
-  question_list_id: number;
-
-  @Column()
-  @Expose()
-  question_id: number;
-
-  @Column()
-  @Expose()
-  order: number;
 
   @Column()
   @Expose()

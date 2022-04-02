@@ -1,22 +1,14 @@
 import { Expose } from 'class-transformer';
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity, ManyToOne } from 'typeorm';
+import { Topic } from '.';
+import BaseEntity from './base.entity';
 
 @Entity({
-  name: 'mock-test',
+  name: 'mock_tests',
 })
-export class TestEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column()
-  @Expose()
-  topic_id: number;
+export class MockTest extends BaseEntity {
+  @ManyToOne(() => Topic)
+  topic: Topic;
 
   @Column()
   @Expose()
@@ -24,15 +16,5 @@ export class TestEntity {
 
   @Column()
   @Expose()
-  duration_in_time: number;
-
-  @Column()
-  @Expose()
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @Column()
-  @Expose()
-  @UpdateDateColumn()
-  updatedAt: Date;
+  durationInMinutes: number;
 }

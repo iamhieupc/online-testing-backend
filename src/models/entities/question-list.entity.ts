@@ -1,34 +1,24 @@
 import { Expose } from 'class-transformer';
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, ManyToOne } from 'typeorm';
+import { Question, Topic } from '.';
+import BaseEntity from './base.entity';
 
 @Entity({
-  name: 'question-lists',
+  name: 'question_lists',
 })
-export class QuestionListEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+export class QuestionList extends BaseEntity {
+  @Column()
+  @Expose()
+  code: string;
 
   @Column()
   @Expose()
   name: string;
 
-  @Column()
-  @Expose()
-  topic_id: number;
+  @ManyToOne(() => Topic)
+  topic: Topic;
 
-  @Column()
-  @Expose()
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @Column()
-  @Expose()
-  @UpdateDateColumn()
-  updatedAt: Date;
+  @ManyToMany(() => Question)
+  @JoinTable({ name: 'question_list_details' })
+  questions: Question[];
 }
