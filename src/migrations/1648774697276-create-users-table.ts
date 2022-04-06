@@ -25,6 +25,11 @@ export class createUsersTable1648774697276 implements MigrationInterface {
             type: 'tinyint',
             default: 0,
           },
+          {
+            name: 'avatar',
+            type: 'varchar',
+            isNullable: true,
+          },
           ...timeStamp(),
         ],
       }),

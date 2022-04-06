@@ -32,6 +32,7 @@ export class createQuestionListsTable1648780212335
           ...timeStamp(),
         ],
       }),
+      true,
     );
     await queryRunner.createForeignKey(
       'question_lists',

@@ -1,10 +1,14 @@
-import { QuestionType } from 'src/enums/question-type';
+import { Difficulty, QuestionType } from 'src/enums';
 import { primaryKey, timeStamp } from 'src/models/utils/generate';
-import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import {
+  MigrationInterface,
+  QueryRunner,
+  Table,
+  TableForeignKey,
+} from 'typeorm';
 
-export class createQuestionsTable1648774945676 implements MigrationInterface {
+export class createQuestionsTable1658913775000 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    // console.log(Object.values(QuestionType));
     await queryRunner.createTable(
       new Table({
         name: 'questions',
@@ -21,18 +25,33 @@ export class createQuestionsTable1648774945676 implements MigrationInterface {
             length: '500',
           },
           {
-            name: 'dificulty',
-            type: 'varchar',
+            name: 'difficulty',
+            type: 'enum',
+            enum: Object.values(Difficulty),
           },
           {
             name: 'explanation',
             type: 'varchar',
             length: '500',
           },
+          {
+            name: 'context_id',
+            type: 'int',
+            isNullable: true,
+          },
           ...timeStamp(),
         ],
       }),
+      true,
     );
+    await queryRunner.createForeignKeys('questions', [
+      new TableForeignKey({
+        columnNames: ['context_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'contexts',
+        onUpdate: 'CASCADE',
+      }),
+    ]);
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {

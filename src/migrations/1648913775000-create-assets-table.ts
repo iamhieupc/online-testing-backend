@@ -1,4 +1,4 @@
-import { AssetType } from 'src/enums/asset-type';
+import { AssetType } from 'src/enums';
 import { primaryKey, timeStamp } from 'src/models/utils/generate';
 import {
   MigrationInterface,
@@ -7,7 +7,7 @@ import {
   TableForeignKey,
 } from 'typeorm';
 
-export class createAssetsTable1648774993062 implements MigrationInterface {
+export class createAssetsTable1648913775000 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -24,29 +24,30 @@ export class createAssetsTable1648774993062 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'user_id',
+            name: 'question_id',
             type: 'int',
           },
           {
-            name: 'question_id',
+            name: 'context_id',
             type: 'int',
           },
           ...timeStamp(),
         ],
       }),
     );
+
     await queryRunner.createForeignKeys('assets', [
-      new TableForeignKey({
-        columnNames: ['user_id'],
-        referencedColumnNames: ['id'],
-        referencedTableName: 'users',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      }),
       new TableForeignKey({
         columnNames: ['question_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'questions',
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      }),
+      new TableForeignKey({
+        columnNames: ['context_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'contexts',
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       }),

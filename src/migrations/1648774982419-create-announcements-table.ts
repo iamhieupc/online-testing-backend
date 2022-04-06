@@ -27,6 +27,7 @@ export class createAnnouncementsTable1648774982419
           ...timeStamp(),
         ],
       }),
+      true,
     );
     await queryRunner.createForeignKey(
       'announcements',

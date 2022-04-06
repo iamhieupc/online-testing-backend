@@ -1,21 +1,17 @@
 import { primaryKey, timeStamp } from 'src/models/utils/generate';
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class createLevelsTable1648774962860 implements MigrationInterface {
+export class createContextsTable1648913774882 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'levels',
+        name: 'contexts',
         columns: [
           primaryKey(),
           {
-            name: 'code',
-            type: 'varchar',
-            isUnique: true,
-          },
-          {
-            name: 'name',
-            type: 'varchar',
+            name: 'text_content',
+            type: 'longtext',
+            isNullable: true,
           },
           ...timeStamp(),
         ],
@@ -25,6 +21,6 @@ export class createLevelsTable1648774962860 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('levels', true, true);
+    await queryRunner.dropTable('contexts', true);
   }
 }

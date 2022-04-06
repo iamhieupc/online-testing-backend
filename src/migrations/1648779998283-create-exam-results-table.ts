@@ -26,6 +26,7 @@ export class createExamResultsTable1648779998283 implements MigrationInterface {
           ...timeStamp(),
         ],
       }),
+      true,
     );
     await queryRunner.createForeignKey(
       'exam_results',

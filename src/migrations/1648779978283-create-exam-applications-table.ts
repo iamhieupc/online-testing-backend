@@ -37,6 +37,7 @@ export class createExamApplicationsTable1648779978283
           ...timeStamp(),
         ],
       }),
+      true,
     );
     await queryRunner.createForeignKeys('exam_applications', [
       new TableForeignKey({

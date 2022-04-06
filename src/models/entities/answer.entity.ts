@@ -9,7 +9,7 @@ import BaseEntity from './base.entity';
 export class Answer extends BaseEntity {
   @Column()
   @Expose()
-  content: string;
+  content?: string;
 
   @Column()
   @Expose()

@@ -29,6 +29,7 @@ export class createExamDetailsTable1648779969072 implements MigrationInterface {
           ...timeStamp(),
         ],
       }),
+      true,
     );
     await queryRunner.createForeignKeys('exam_details', [
       new TableForeignKey({

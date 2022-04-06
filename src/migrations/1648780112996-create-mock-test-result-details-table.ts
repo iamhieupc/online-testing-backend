@@ -30,6 +30,7 @@ export class createMockTestResultDetailsTable1648780112996
           ...timeStamp(),
         ],
       }),
+      true,
     );
     await queryRunner.createForeignKeys('mock_test_result_details', [
       new TableForeignKey({

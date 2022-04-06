@@ -25,6 +25,7 @@ export class createMockTestsTable1648780062191 implements MigrationInterface {
           ...timeStamp(),
         ],
       }),
+      true,
     );
     await queryRunner.createForeignKey(
       'mock_tests',

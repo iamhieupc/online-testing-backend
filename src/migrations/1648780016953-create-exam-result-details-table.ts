@@ -27,6 +27,7 @@ export class createExamResultDetailsTable1648780016953
           ...timeStamp(),
         ],
       }),
+      true,
     );
     await queryRunner.createForeignKeys('exam_result_details', [
       new TableForeignKey({

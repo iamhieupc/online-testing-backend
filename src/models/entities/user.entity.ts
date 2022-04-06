@@ -21,6 +21,10 @@ export class User extends BaseEntity {
 
   @Column()
   @Expose()
+  avatar?: string;
+
+  @Column()
+  @Expose()
   isAdmin: boolean;
 
   @OneToMany(() => Announcement, (announcement) => announcement.user)

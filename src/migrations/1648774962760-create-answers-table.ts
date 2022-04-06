@@ -28,6 +28,7 @@ export class createAnswersTable1648774962760 implements MigrationInterface {
           ...timeStamp(),
         ],
       }),
+      true,
     );
     await queryRunner.createForeignKey(
       'answers',
