@@ -1,7 +1,7 @@
 import { primaryKey, timeStamp } from 'src/models/utils/generate';
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class createContextsTable1648913774882 implements MigrationInterface {
+export class createContextsTable1648774962560 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
