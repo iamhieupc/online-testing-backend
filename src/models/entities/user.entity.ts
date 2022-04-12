@@ -1,5 +1,12 @@
 import { Expose } from 'class-transformer';
-import { Column, Entity, JoinTable, ManyToMany, OneToMany } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Announcement, Exam, MockTest } from '.';
 import BaseEntity from './base.entity';
 

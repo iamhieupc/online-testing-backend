@@ -7,7 +7,11 @@ export class createUsersTable1648774697276 implements MigrationInterface {
       new Table({
         name: 'users',
         columns: [
-          primaryKey(),
+          primaryKey({
+            isGenerated: true,
+            generationStrategy: 'increment',
+            unsigned: true,
+          }),
           {
             name: 'name',
             type: 'varchar',

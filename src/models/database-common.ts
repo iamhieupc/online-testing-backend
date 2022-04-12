@@ -1,7 +1,8 @@
 import { Global, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserRepository } from './repositories/users.repository';
 
-const commonRepositories = [];
+const commonRepositories = [UserRepository];
 
 @Global()
 @Module({
