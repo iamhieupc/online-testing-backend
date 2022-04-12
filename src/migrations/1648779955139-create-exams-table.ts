@@ -18,6 +18,7 @@ export class createExamsTable1648779955139 implements MigrationInterface {
             name: 'level_id',
             type: 'int',
             isNullable: true,
+            unsigned: true,
           },
           {
             name: 'name',

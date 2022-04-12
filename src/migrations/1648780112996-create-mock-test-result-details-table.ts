@@ -18,14 +18,20 @@ export class createMockTestResultDetailsTable1648780112996
           {
             name: 'mock_test_result_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'question_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'selected_answer_id',
             type: 'int',
+            unsigned: true,
+            isNullable: true,
           },
           ...timeStamp(),
         ],

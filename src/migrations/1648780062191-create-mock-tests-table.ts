@@ -16,6 +16,8 @@ export class createMockTestsTable1648780062191 implements MigrationInterface {
           {
             name: 'topic_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'name',

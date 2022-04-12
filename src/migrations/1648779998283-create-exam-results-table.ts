@@ -16,6 +16,8 @@ export class createExamResultsTable1648779998283 implements MigrationInterface {
           {
             name: 'exam_application_id',
             type: 'int',
+            isNullable: false,
+            unsigned: true,
           },
           {
             name: 'num_correct_answers',

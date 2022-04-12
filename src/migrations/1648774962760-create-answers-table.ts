@@ -24,6 +24,8 @@ export class createAnswersTable1648774962760 implements MigrationInterface {
           {
             name: 'question_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           ...timeStamp(),
         ],

@@ -18,8 +18,10 @@ export class createQuestionTopicTable1648851598051
           {
             name: 'question_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
-          { name: 'topic_id', type: 'int' },
+          { name: 'topic_id', type: 'int', unsigned: true, isNullable: false },
           ...timeStamp(),
         ],
       }),

@@ -37,6 +37,7 @@ export class createQuestionsTable1648774962660 implements MigrationInterface {
           {
             name: 'context_id',
             type: 'int',
+            unsigned: true,
             isNullable: true,
           },
           ...timeStamp(),

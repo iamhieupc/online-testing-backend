@@ -28,6 +28,8 @@ export class createQuestionListsTable1648780212335
           {
             name: 'topic_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           ...timeStamp(),
         ],

@@ -18,6 +18,8 @@ export class createAnnouncementsTable1648774982419
           {
             name: 'user_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'content',

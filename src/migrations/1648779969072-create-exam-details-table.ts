@@ -16,10 +16,14 @@ export class createExamDetailsTable1648779969072 implements MigrationInterface {
           {
             name: 'question_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'exam_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'order',

@@ -26,10 +26,14 @@ export class createAssetsTable1648913775000 implements MigrationInterface {
           {
             name: 'question_id',
             type: 'int',
+            unsigned: true,
+            isNullable: true,
           },
           {
             name: 'context_id',
             type: 'int',
+            unsigned: true,
+            isNullable: true,
           },
           ...timeStamp(),
         ],

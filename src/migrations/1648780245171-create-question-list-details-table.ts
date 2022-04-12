@@ -18,10 +18,14 @@ export class createQuestionListDetailsTable1648780245171
           {
             name: 'question_list_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'question_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'order',

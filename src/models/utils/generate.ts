@@ -1,12 +1,17 @@
+import { TableColumnOptions } from 'typeorm';
+
 /**
  * Generate primary key column
  * @param options
  * @returns
  */
-const primaryKey = (options?: object) => ({
+const primaryKey = (options?: object): TableColumnOptions => ({
   name: 'id',
   type: 'int',
   isPrimary: true,
+  isGenerated: true,
+  generationStrategy: 'increment',
+  unsigned: true,
   ...options,
 });
 

@@ -19,10 +19,14 @@ export class createExamApplicationsTable1648779978283
           {
             name: 'user_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'exam_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'type',

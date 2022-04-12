@@ -18,12 +18,21 @@ export class createExamResultDetailsTable1648780016953
           {
             name: 'exam_result_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
           {
             name: 'question_id',
             type: 'int',
+            unsigned: true,
+            isNullable: false,
           },
-          { name: 'selected_answer_id', type: 'int' },
+          {
+            name: 'selected_answer_id',
+            type: 'int',
+            unsigned: true,
+            isNullable: true,
+          },
           ...timeStamp(),
         ],
       }),
