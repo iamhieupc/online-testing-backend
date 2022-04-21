@@ -8,7 +8,7 @@ import BaseEntity from './base.entity';
 })
 export class MockTestDetail extends BaseEntity {
   @ManyToOne(() => MockTest)
-  mockTest: MockTest;
+  mock_test: MockTest;
 
   @ManyToMany(() => Question)
   question: Question;

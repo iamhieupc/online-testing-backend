@@ -9,10 +9,10 @@ import BaseEntity from './base.entity';
 })
 export class QuestionListDetail extends BaseEntity {
   @ManyToOne(() => QuestionList)
-  questionListId: number;
+  question_list: QuestionList;
 
   @ManyToOne(() => Question)
-  question: number;
+  question: Question;
 
   @Column()
   @Expose()

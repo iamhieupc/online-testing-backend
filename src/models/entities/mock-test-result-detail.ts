@@ -7,11 +7,11 @@ import BaseEntity from './base.entity';
 })
 export class MockTestResultDetail extends BaseEntity {
   @ManyToOne(() => MockTestResult)
-  mockTestResult: number;
+  mock_test_result: number;
 
   @ManyToOne(() => Question)
   question: Question;
 
   @ManyToOne(() => Answer)
-  selectedAnswer: Answer;
+  selected_answer: Answer;
 }

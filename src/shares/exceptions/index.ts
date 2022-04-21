@@ -52,9 +52,17 @@ export const httpErrors = {
     message: 'Address is not existed.',
     code: 'USER_000012',
   },
+  ACCOUNT_WRONG_PASSWORD: {
+    message: 'Password is incorrect.',
+    code: 'USER_000013',
+  },
   TIME_LIMIT_LOGIN: {
     message: 'Login time is more than 5 minutes',
-    code: 'ADMIN_000012',
+    code: 'ADMIN_000014',
+  },
+  WRONG_TOKEN_VERIFY: {
+    message: 'The time verify has expired.',
+    code: 'USER_000014',
   },
   USER_EMAIL_EXISTED: {
     message: 'Email has been associted with an other account.',

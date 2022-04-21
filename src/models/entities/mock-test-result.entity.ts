@@ -8,7 +8,7 @@ import BaseEntity from './base.entity';
 })
 export class MockTestResult extends BaseEntity {
   @ManyToOne(() => MockTest)
-  mockTest: MockTest;
+  mock_test: MockTest;
 
   @ManyToOne(() => User)
   user: User;
@@ -19,5 +19,5 @@ export class MockTestResult extends BaseEntity {
 
   @Column()
   @Expose()
-  timeTaken: number;
+  time_taken: number;
 }

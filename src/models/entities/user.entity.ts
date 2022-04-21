@@ -1,12 +1,5 @@
 import { Expose } from 'class-transformer';
-import {
-  Column,
-  Entity,
-  JoinTable,
-  ManyToMany,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, OneToMany } from 'typeorm';
 import { Announcement, Exam, MockTest } from '.';
 import BaseEntity from './base.entity';
 
@@ -32,7 +25,19 @@ export class User extends BaseEntity {
 
   @Column()
   @Expose()
-  isAdmin: boolean;
+  is_admin: boolean;
+
+  @Column()
+  @Expose()
+  status: number;
+
+  @Column()
+  @Expose()
+  refresh_token: string;
+
+  @Column()
+  @Expose()
+  refresh_token_expires: number;
 
   @OneToMany(() => Announcement, (announcement) => announcement.user)
   announcements: Announcement[];
@@ -43,5 +48,5 @@ export class User extends BaseEntity {
 
   @ManyToMany(() => MockTest)
   @JoinTable({ name: 'mock_test_results' })
-  mockTests: MockTest[];
+  mock_tests: MockTest[];
 }

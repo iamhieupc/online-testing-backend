@@ -26,6 +26,10 @@ export class createUsersTable1648774697276 implements MigrationInterface {
             default: 0,
           },
           {
+            name: 'refresh_token',
+            type: 'varchar',
+          },
+          {
             name: 'avatar',
             type: 'varchar',
             isNullable: true,

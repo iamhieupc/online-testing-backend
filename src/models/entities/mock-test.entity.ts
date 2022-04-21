@@ -16,5 +16,5 @@ export class MockTest extends BaseEntity {
 
   @Column()
   @Expose()
-  durationInMinutes: number;
+  duration_in_minutes: number;
 }

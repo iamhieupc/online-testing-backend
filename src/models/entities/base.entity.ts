@@ -13,10 +13,10 @@ export default abstract class BaseEntity {
   @Column()
   @Expose()
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @Column()
   @Expose()
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 }

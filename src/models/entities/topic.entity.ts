@@ -19,5 +19,5 @@ export class Topic extends BaseEntity {
   questions: Question[];
 
   @OneToMany(() => QuestionList, (questionList) => questionList.topic)
-  questionLists: QuestionList[];
+  question_lists: QuestionList[];
 }

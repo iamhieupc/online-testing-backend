@@ -13,7 +13,7 @@ export class Answer extends BaseEntity {
 
   @Column()
   @Expose()
-  isCorrect: boolean;
+  is_correct: boolean;
 
   @Column()
   @Expose()

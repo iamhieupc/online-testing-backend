@@ -11,7 +11,7 @@ export class Context extends BaseEntity {
   id: number;
 
   @Column({ nullable: true, type: 'longtext' })
-  textContent: string;
+  text_content: string;
 
   @Column({
     enum: ContextType,

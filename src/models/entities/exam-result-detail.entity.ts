@@ -7,11 +7,11 @@ import BaseEntity from './base.entity';
 })
 export class ExamResultDetail extends BaseEntity {
   @ManyToOne(() => ExamResult)
-  examResult: number;
+  exam_result: number;
 
   @ManyToOne(() => Question)
   question: number;
 
   @ManyToOne(() => Answer)
-  selectedAnswer: number;
+  selected_answer: number;
 }

@@ -9,13 +9,13 @@ import BaseEntity from './base.entity';
 export class ExamResult extends BaseEntity {
   @OneToOne(() => ExamApplication)
   @JoinColumn()
-  examApplication: ExamApplication;
+  exam_application: ExamApplication;
 
   @Column()
   @Expose()
-  numCorrectAnswers: number;
+  num_correct_answers: number;
 
   @Column()
   @Expose()
-  timeTaken: number;
+  time_taken: number;
 }

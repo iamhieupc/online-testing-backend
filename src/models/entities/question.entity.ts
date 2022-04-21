@@ -16,7 +16,7 @@ export class Question extends BaseEntity {
 
   @Column({ length: 500 })
   @Expose()
-  questionText: string;
+  question_text: string;
 
   @Column({
     enum: Difficulty,

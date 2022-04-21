@@ -17,19 +17,19 @@ export class Exam extends BaseEntity {
 
   @Column()
   @Expose()
-  registerStartAt: Date;
+  register_start_at: Date;
 
   @Column()
   @Expose()
-  registerEndAt: Date;
+  register_end_at: Date;
 
   @Column()
   @Expose()
-  timeStart: Date;
+  time_start: Date;
 
   @Column()
   @Expose()
-  durationInMinutes: number;
+  duration_in_minutes: number;
 
   @Column({
     enum: ExamStatus,
