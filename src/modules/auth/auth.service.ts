@@ -192,7 +192,7 @@ export class AuthService {
 
   async loginGoogle(req) {
     if (!req.user) {
-      return 'No user from google';
+      return 'No user google';
     } else {
       return {
         message: 'login google success',
