@@ -46,6 +46,7 @@
     "class-validator": "^0.13.2",
     "dotenv": "^16.0.0",
     "helmet": "^5.0.2",
+    "heroku": "^7.62.0",
     "moment": "^2.29.2",
     "mysql2": "^2.3.3",
     "passport": "^0.5.2",
