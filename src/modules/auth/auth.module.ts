@@ -4,6 +4,7 @@ import { MailModule } from '../mail/mail.module';
 import { jwtConstants } from './auth.constants';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
+import { GoogleStrategy } from './strategies/google.strategy';
 import { JwtStrategy } from './strategies/jwt.strategy';
 
 @Module({
@@ -15,7 +16,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
     CacheModule.register(),
     MailModule,
   ],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy, GoogleStrategy],
   exports: [AuthService],
   controllers: [AuthController],
 })

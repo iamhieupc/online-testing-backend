@@ -189,4 +189,15 @@ export class AuthService {
 
     return user;
   }
+
+  async loginGoogle(req) {
+    if (!req.user) {
+      return 'No user from google';
+    } else {
+      return {
+        message: 'login google success',
+        data: req.user,
+      };
+    }
+  }
 }

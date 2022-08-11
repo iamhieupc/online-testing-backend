@@ -20,13 +20,3 @@ services:
     container_name: online-testing-redis
     ports:
       - 3009:6379
-
-  app:
-    build: .
-    container_name: online-testing-be
-    ports:
-      - 9093:3000
-    volumes:
-      - .:/app
-    depends_on:
-      - mysql
