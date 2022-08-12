@@ -200,4 +200,15 @@ export class AuthService {
       };
     }
   }
+
+  async loginFacebook(req) {
+    if (!req.user) {
+      return 'No user google';
+    } else {
+      return {
+        message: 'login facebook success',
+        data: req.user,
+      };
+    }
+  }
 }

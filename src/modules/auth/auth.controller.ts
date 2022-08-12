@@ -47,4 +47,10 @@ export class AuthController {
   async loginGoogle(@Req() req): Promise<any> {
     return await this.authService.loginGoogle(req);
   }
+
+  @Get('facebook')
+  @UseGuards(AuthGuard('facebook'))
+  async loginFacebook(@Req() req): Promise<any> {
+    return await this.authService.loginFacebook(req);
+  }
 }
